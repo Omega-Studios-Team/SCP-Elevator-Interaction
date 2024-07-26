@@ -14,14 +14,37 @@ namespace SCPElevatorInteraction
 
         public void OnInteractingElevator(InteractingElevatorEventArgs ev)
         {
-            if ((ev.Lift.Type == ElevatorType.GateA && _config.ScpAllowedGateA.Contains(ev.Player.Role)) ||
-                (ev.Lift.Type == ElevatorType.GateB && _config.ScpAllowedGateB.Contains(ev.Player.Role)))
+            bool isBlacklisted = false;
+
+            switch (ev.Lift.Type)
             {
-                return; // Allow interaction if SCP is authorized
+                case ElevatorType.GateA:
+                    isBlacklisted = _config.ScpBlacklistGateA.Contains(ev.Player.Role);
+                    break;
+                case ElevatorType.GateB:
+                    isBlacklisted = _config.ScpBlacklistGateB.Contains(ev.Player.Role);
+                    break;
+                case ElevatorType.LczA:
+                    isBlacklisted = _config.ScpBlacklistElevatorSystemA.Contains(ev.Player.Role);
+                    break;
+                case ElevatorType.LczB:
+                    isBlacklisted = _config.ScpBlacklistElevatorSystemB.Contains(ev.Player.Role);
+                    break;
+                case ElevatorType.Scp049:
+                    isBlacklisted = _config.ScpBlacklistScp049.Contains(ev.Player.Role);
+                    break;
+                case ElevatorType.Nuke:
+                    isBlacklisted = _config.ScpBlacklistAlphaWarhead.Contains(ev.Player.Role);
+                    break;
+                default:
+                    break;
             }
 
-            ev.IsAllowed = false; // Disallow interaction
-            ev.Player.ShowHint(_config.HintMessage); // Show hint message
+            if (isBlacklisted)
+            {
+                ev.IsAllowed = false; // Disallow interaction
+                ev.Player.ShowHint(_config.HintMessage); // Show hint message
+            }
         }
     }
 }

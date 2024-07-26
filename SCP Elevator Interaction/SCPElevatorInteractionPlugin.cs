@@ -10,7 +10,7 @@ namespace SCPElevatorInteraction
         public override string Name => "SCPElevatorInteraction";
         public override string Prefix => "scpelevatorinteraction";
         public override Version RequiredExiledVersion => new Version(3, 0, 0);
-        public override Version Version => new Version(1, 0, 0);
+        public override Version Version => new Version(1, 0, 1);
 
         private EventHandler eventHandler;
 
