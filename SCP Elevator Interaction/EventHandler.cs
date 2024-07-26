@@ -1,4 +1,5 @@
 ﻿using Exiled.API.Enums;
+using Exiled.API.Features;
 using Exiled.Events.EventArgs;
 using Exiled.Events.EventArgs.Player;
 using PlayerRoles;
@@ -7,35 +8,20 @@ namespace SCPElevatorInteraction
 {
     public class EventHandler
     {
-        private readonly Config config;
+        private readonly Config _config;
 
-        public EventHandler(Config config)
-        {
-            this.config = config;
-        }
+        public EventHandler(Config config) => _config = config;
 
         public void OnInteractingElevator(InteractingElevatorEventArgs ev)
         {
-            if (ev.Lift.Type == ElevatorType.GateA || ev.Lift.Type == ElevatorType.GateB)
+            if ((ev.Lift.Type == ElevatorType.GateA && _config.ScpAllowedGateA.Contains(ev.Player.Role)) ||
+                (ev.Lift.Type == ElevatorType.GateB && _config.ScpAllowedGateB.Contains(ev.Player.Role)))
             {
-                RoleTypeId scpRole = ev.Player.Role;
-
-                bool is096InRage = scpRole == RoleTypeId.Scp096 && ev.Player.GetScp096().IsEnraged;
-
-                if (is096InRage ||
-                    (ev.Lift.Type == ElevatorType.GateA && config.ScpAllowedGateA.Contains(scpRole)) ||
-                    (ev.Lift.Type == ElevatorType.GateB && config.ScpAllowedGateB.Contains(scpRole)))
-                {
-                    if (is096InRage)
-                    {
-                        ev.Player.ShowHint(config.HintMessage096Rage);
-                    }
-                    return;
-                }
-
-                ev.IsAllowed = false;
-                ev.Player.ShowHint(config.HintMessage);
+                return; // Allow interaction if SCP is authorized
             }
+
+            ev.IsAllowed = false; // Disallow interaction
+            ev.Player.ShowHint(_config.HintMessage); // Show hint message
         }
     }
 }
