@@ -11,7 +11,7 @@ To get started, find the Exiled plugin folder. It is normally located here: ``C:
 To modify the plugin config, start by locating your config folder. It should be found here: ``C:\Users\%UserName%\AppData\Roaming\EXILED\Configs`` then search the ``xxxx-config.yml`` **(xxxx stands for the port of the server)**.
 Then run it with a text editor (Notepad should work but i recommend you VsCode or ~~Atom~~ :trollface:). 
 
-### You should see that in the config file : 
+### The Config : 
 ```yml
 scpelevatorinteraction:
   is_enabled: true
@@ -44,7 +44,7 @@ scpelevatorinteraction:
 - The ``scp_blacklist_alpha_warhead:`` is a list, wich mean you can add or remove SCPs that must be blacklist from the Nuke elevator.
 - The ``hint_message`` is the text display when a blacklist SCP try to interact with is blacklist elevator.
 
-### Here is the list of SCPs that you can add in the blacklist section : 
+### List of Blacklistable SCPs : 
 
 ```yml
 - Scp173
