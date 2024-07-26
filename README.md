@@ -44,3 +44,14 @@ scpelevatorinteraction:
 - The ``scp_blacklist_alpha_warhead:`` is a list, wich mean you can add or remove SCPs that must be blacklist from the Nuke elevator.
 - The ``hint_message`` is the text display when a blacklist SCP try to interact with is blacklist elevator.
 
+### Here is the list of SCPs that you can add in the blacklist section : 
+
+```yml
+- Scp173
+- Scp3114
+- Scp049
+- Scp0492
+- Scp096
+- Scp939
+- Scp106
+```
