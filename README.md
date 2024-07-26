@@ -34,13 +34,13 @@ scpelevatorinteraction:
   hint_message: 'You can't use this elevator !'
 ```
 
->The ``is_enabled`` tells to exiled if the plugin should be load or not.
->The ``Debug`` shouldn't be usefull for you.
->The ``scp_blacklist_gate_a:`` is a list, wich mean you can add or remove SCPs that must be blacklist from the GateA elevator.
->The ``scp_blacklist_gate_b:`` is a list, wich mean you can add or remove SCPs that must be blacklist from the GateB elevator.
->The ``scp_blacklist_elevator_system_a:`` is a list, wich mean you can add or remove SCPs that must be blacklist from the LczA elevator.
->The ``scp_blacklist_elevator_system_b:`` is a list, wich mean you can add or remove SCPs that must be blacklist from the LczB elevator.
->The ``scp_blacklist_scp049:`` is a list, wich mean you can add or remove SCPs that must be blacklist from the 049 elevator.
->The ``scp_blacklist_alpha_warhead:`` is a list, wich mean you can add or remove SCPs that must be blacklist from the Nuke elevator.
->The ``hint_message`` is the text display when a blacklist SCP try to interact with is blacklist elevator.
+- The ``is_enabled`` tells to exiled if the plugin should be load or not.
+- The ``Debug`` shouldn't be usefull for you.
+- The ``scp_blacklist_gate_a:`` is a list, wich mean you can add or remove SCPs that must be blacklist from the GateA elevator.
+- The ``scp_blacklist_gate_b:`` is a list, wich mean you can add or remove SCPs that must be blacklist from the GateB elevator.
+- The ``scp_blacklist_elevator_system_a:`` is a list, wich mean you can add or remove SCPs that must be blacklist from the LczA elevator.
+- The ``scp_blacklist_elevator_system_b:`` is a list, wich mean you can add or remove SCPs that must be blacklist from the LczB elevator.
+- The ``scp_blacklist_scp049:`` is a list, wich mean you can add or remove SCPs that must be blacklist from the 049 elevator.
+- The ``scp_blacklist_alpha_warhead:`` is a list, wich mean you can add or remove SCPs that must be blacklist from the Nuke elevator.
+- The ``hint_message`` is the text display when a blacklist SCP try to interact with is blacklist elevator.
 
