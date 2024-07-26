@@ -8,6 +8,8 @@ To get started, find the Exiled plugin folder. It is normally located here: ``C:
 
 <h1 align="center">S.E.I - Configuration</h1>
 
+To modify the plugin config, start by locating your config folder. It should be found here: ``C:\Users\%UserName%\AppData\Roaming\EXILED\Configs`` then search the ``xxxx-config.yml`` **(xxxx stands for the port of the server)**
+
 ```yml
 scpelevatorinteraction:
   is_enabled: true
