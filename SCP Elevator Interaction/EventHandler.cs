@@ -44,12 +44,12 @@ namespace SCPElevatorInteraction
 
             if (isBlacklisted && !ev.Player.HasScp096Target())
             {
-                ev.IsAllowed = false; // Disallow interaction
+                ev.IsAllowed = false; 
                 string message = _config.HintMessage;
 
                 if (_config.UseHint)
                 {
-                    ev.Player.ShowHint(message, _config.HintDuration);
+                    ev.Player.ShowHint(message, _config.HintDuration * 1000); 
                 }
                 else
                 {

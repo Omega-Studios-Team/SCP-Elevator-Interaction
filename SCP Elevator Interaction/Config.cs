@@ -28,7 +28,7 @@ namespace SCPElevatorInteraction
         [Description("List of SCPs that are blacklisted from using the Alpha Warhead elevator.")]
         public List<RoleTypeId> ScpBlacklistAlphaWarhead { get; set; } = new List<RoleTypeId>();
 
-        [Description("The duration of the hint message displayed to players.")]
+        [Description("The duration of the hint message displayed to players (in seconds).")]
         public ushort HintDuration { get; set; } = 5;
 
         [Description("The message displayed to players when they are not allowed to use an elevator.")]
