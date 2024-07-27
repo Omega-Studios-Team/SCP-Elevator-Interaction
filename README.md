@@ -59,7 +59,7 @@ scpelevatorinteraction:
   # The duration of the hint message displayed to players.
   hint_duration: 5
   # The message displayed to players when they are not allowed to use an elevator.
-  hint_message: 'Vous ne pouvez pas prendre cet ascenseur !'
+  hint_message: 'You are not allowed to use this elevator !'
   # Whether to use hint messages (true) or broadcast messages (false).
   use_hint: true
 ```
