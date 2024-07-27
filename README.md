@@ -1,4 +1,10 @@
 <h1 align="center">SCPElevatorInteraction - S.E.I</h1>
+<br>
+<div align="center">
+<img alt="GitHub Downloads (all assets, all releases)" src="https://img.shields.io/github/downloads/RLLanonymous/SCP-Elevator-Interaction/total?style=for-the-badge&logo=Github&logoSize=auto&color=%230a912e&link=https%3A%2F%2Fgithub.com%2FRLLanonymous%2FSCP-Elevator-Interaction%2Freleases">
+
+</div>
+<br>
 S.E.I is an Exiled Reboot: 8.9.11 plugin. With this plugin you can manage wich SCP can interact with wich Elevator.
 You can also manage the Hint display if a SCP can't interact with an elevator.
 
@@ -56,3 +62,6 @@ scpelevatorinteraction:
 - Scp106
 ```
 Now you are ready to bully SCPs :trollface:
+
+
+
