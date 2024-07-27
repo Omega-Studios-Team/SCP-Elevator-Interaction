@@ -1,8 +1,10 @@
 ﻿using Exiled.API.Enums;
 using Exiled.API.Features;
 using Exiled.Events.EventArgs;
-using Exiled.Events.EventArgs.Player;
 using PlayerRoles;
+using PlayerRoles.PlayableScps.Scp096;
+using Exiled.Events.EventArgs.Player;
+using System.Collections.Generic;
 
 namespace SCPElevatorInteraction
 {
@@ -40,11 +42,51 @@ namespace SCPElevatorInteraction
                     break;
             }
 
-            if (isBlacklisted)
+            if (isBlacklisted && !ev.Player.HasScp096Target())
             {
                 ev.IsAllowed = false; // Disallow interaction
-                ev.Player.ShowHint(_config.HintMessage); // Show hint message
+                string message = _config.HintMessage;
+
+                if (_config.UseHint)
+                {
+                    ev.Player.ShowHint(message, _config.HintDuration);
+                }
+                else
+                {
+                    ev.Player.Broadcast(_config.HintDuration, message);
+                }
             }
         }
     }
+
+    public static class PlayerExtensions
+    {
+        public static bool HasScp096Target(this Player player)
+        {
+            if (player.Role == RoleTypeId.Scp096)
+            {
+                var scp096Role = player.ReferenceHub.roleManager.CurrentRole as Scp096Role;
+                if (scp096Role != null && scp096Role.SubroutineModule.TryGetSubroutine<Scp096TargetsTracker>(out var targetsTracker))
+                {
+                    return targetsTracker.Targets.Count > 0;
+                }
+            }
+            return false;
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
