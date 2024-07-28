@@ -89,5 +89,3 @@ scpelevatorinteraction:
 ```
 Now you are ready to bully SCPs :trollface:
 
-
-
