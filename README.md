@@ -28,22 +28,40 @@ Then run it with a text editor (Notepad should work but i recommend you VsCode o
 scpelevatorinteraction:
   is_enabled: true
   debug: false
+  # List of SCPs that are blacklisted from using Gate A elevators.
   scp_blacklist_gate_a:
-  - Scp049
-  - Scp096
-  scp_blacklist_gate_b:
+  - Scp0492
   - Scp173
-  - Scp106
-  - Scp049
-  scp_blacklist_elevator_system_a:
   - Scp939
-  scp_blacklist_elevator_system_b: 
-  - Scp3114
-  scp_blacklist_scp049:
-  - Scp049
+  - Scp096
+  # List of SCPs that are blacklisted from using Gate B elevators.
+  scp_blacklist_gate_b:
+  - Scp0492
+  - Scp173
+  - Scp939
+  - Scp096
+  # List of SCPs that are blacklisted from using Elevator System A.
+  scp_blacklist_elevator_system_a:
+  - Scp0492
+  - Scp173
+  - Scp939
+  - Scp096
+  # List of SCPs that are blacklisted from using Elevator System B.
+  scp_blacklist_elevator_system_b:
+  - Scp0492
+  - Scp096
+  # List of SCPs that are blacklisted from using SCP-049's elevator.
+  scp_blacklist_scp049: 
+  - Scp096
+  # List of SCPs that are blacklisted from using the Alpha Warhead elevator.
   scp_blacklist_alpha_warhead:
-  - Scp106
-  hint_message: 'You can't use this elevator !'
+  - Scp0492
+  # The duration of the hint message displayed to players.
+  hint_duration: 5
+  # The message displayed to players when they are not allowed to use an elevator.
+  hint_message: 'You are not allowed to use this elevator !'
+  # Whether to use hint messages (true) or broadcast messages (false).
+  use_hint: true
 ```
 
 - The ``is_enabled`` tells to exiled if the plugin should be load or not.
@@ -55,6 +73,8 @@ scpelevatorinteraction:
 - The ``scp_blacklist_scp049:`` is a list, wich mean you can add or remove SCPs that must be blacklist from the 049 elevator.
 - The ``scp_blacklist_alpha_warhead:`` is a list, wich mean you can add or remove SCPs that must be blacklist from the Nuke elevator.
 - The ``hint_message`` is the text display when a blacklist SCP try to interact with is blacklist elevator.
+- The ``hint_duration`` is the duration of the text display when a blacklist SCP try to interact with is blacklist elevator (in seconds).
+- The ``use_hint`` tells to use hint if its set on true or use broadcast if its set on false.
 
 ### List of Blacklistable SCPs : 
 
@@ -68,6 +88,4 @@ scpelevatorinteraction:
 - Scp106
 ```
 Now you are ready to bully SCPs :trollface:
-
-
 
